@@ -33,7 +33,7 @@ DualSun, +33 4 13 41 53 70, contact@dualsun.fr
 
 The form will be filled on-site by the installer, who may not have access to a laptop and is, by far, not the most geeky person you can hope for.
 
-The inputs gathered must be stored in a way that allows our support team to quickly filter and analyze the data since around 50 (and rising) of these forms are currently submitted a week.
+The inputs gathered must be stored in a way that allows our support team to quickly filter and analyze the data since around 100 (and rising) of these forms are currently submitted a week.
 
 ## Tech requirements
 
@@ -59,18 +59,15 @@ A few technologies/libraries **must be used** to build the app:
 
 ## What we expect
 
-We expect to receive 2 folders from you:
-
-- a `client` folder with the whole Angular.js application,
-- a `server` folder with the Rails api.
+Simply fork this repository and then build on the two directories at your disposal (client & server), they contain the basic setup for the rails & the angular applications.
 
 ## How to send your app code
 
-When you feel you are done, send us by email a link to a private GitHub repository with an invite access for [@fab2605](https://github.com/fab2605)
+When you feel you are done, send us by email a link to the forked GitHub repository with invite accesses for [@fab2605](https://github.com/fab2605) and [@cramarokoto](https://github.com/cramarokoto).
 
 ## Tips
 
 - **Design/style of the app is not the priority, focus on database structure, code quality and test coverage.**
-- Feel free to use any library you want
+- Feel free to add and use any library you want
 - Got questions? Contact us! (No penalties for asking questions 😉)
 
