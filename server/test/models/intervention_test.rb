@@ -41,11 +41,6 @@ class InterventionTest < ActiveSupport::TestCase
     assert_not @intervention.save
   end
 
-  test 'Should not save without Type Panel' do
-    @intervention.type_panel = ''
-    assert_not @intervention.save
-  end
-
   test 'Should not save with incorrect Panel Ref (not integer)' do
     @intervention.ref_panel = Faker::Alphanumeric.alphanumeric(number: 6, min_alpha: 3, min_numeric: 3)
     assert_not @intervention.save
