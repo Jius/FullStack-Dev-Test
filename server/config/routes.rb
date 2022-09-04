@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :interventions
+  resources :interventions, defaults: {format: :json}
 end
