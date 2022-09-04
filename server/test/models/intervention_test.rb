@@ -1,5 +1,5 @@
-require "test_helper"
-require "faker"
+require 'test_helper'
+require 'faker'
 
 class InterventionTest < ActiveSupport::TestCase
   setup do
@@ -16,37 +16,52 @@ class InterventionTest < ActiveSupport::TestCase
     )
   end
 
-  test "Should not save without company" do
+  test 'Should not save without company' do
     @intervention.company = nil
     assert_not @intervention.save
   end
 
-  test "Should not save without customer" do
+  test 'Should not save without customer' do
     @intervention.customer = nil
     assert_not @intervention.save
   end
 
-  test "Should not save with incorrect Panel Ref (not integer)" do
-    @intervention.ref_panel = Faker::Alphanumeric.alphanumeric(number: 6, min_alpha: 3, min_numeric: 3)
+  test 'Should not save without started_at' do
+    @intervention.started_at = nil
     assert_not @intervention.save
   end
 
-  test "Should not save with incorrect Panel Ref (length inferior)" do
-    @intervention.ref_panel = Faker::Number.number(digits: 5)
+  test 'Should not save without Total Panels' do
+    @intervention.total_panels = ''
     assert_not @intervention.save
   end
 
-  test "Should not save with incorrect Panel Ref (length superior)" do
-    @intervention.ref_panel = Faker::Number.number(digits: 7)
+  test 'Should not save with incorrect Total Panels (letters)' do
+    @intervention.total_panels = Faker::Alphanumeric.alphanumeric(number: 2, min_alpha: 2)
     assert_not @intervention.save
   end
 
-  test "Should not save without Type Panel" do
+  test 'Should not save without Type Panel' do
     @intervention.type_panel = ''
     assert_not @intervention.save
   end
 
-  test "Should not save without Address, Zip, City" do
+  test 'Should not save with incorrect Panel Ref (not integer)' do
+    @intervention.ref_panel = Faker::Alphanumeric.alphanumeric(number: 6, min_alpha: 3, min_numeric: 3)
+    assert_not @intervention.save
+  end
+
+  test 'Should not save with incorrect Panel Ref (length inferior)' do
+    @intervention.ref_panel = Faker::Number.number(digits: 5)
+    assert_not @intervention.save
+  end
+
+  test 'Should not save with incorrect Panel Ref (length superior)' do
+    @intervention.ref_panel = Faker::Number.number(digits: 7)
+    assert_not @intervention.save
+  end
+
+  test 'Should not save without Address, Zip, City' do
     @intervention.address = ''
     @intervention.zipcode = ''
     @intervention.city = ''
