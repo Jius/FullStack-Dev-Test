@@ -42,7 +42,7 @@ A few technologies/libraries **must be used** to build the app:
 **Frontend:**
 
 - Language : Typescript
-- Framework : Angular.js (>= v10)
+- Framework : Angular (>= v10)
 
 **Backend:**
 
