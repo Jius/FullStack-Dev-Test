@@ -5,7 +5,8 @@ class InterventionsController < ApplicationController
 
   # GET /interventions
   def index
-    @interventions = Intervention.all
+    @q = Intervention.ransack(params[:q])
+    @pagy, @interventions = pagy(@q.result)
 
     render json: @interventions
   end
