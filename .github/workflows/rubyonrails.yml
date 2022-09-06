@@ -58,6 +58,9 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: '2.7.0'
+      - name: Bundle install
+        run: bin/bundle install
+        working-directory: server
       # Add or replace any other lints here
       - name: Security audit dependencies
         run: bin/bundler-audit --update
