@@ -1,0 +1,12 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+gotham_bruce:
+  company: gotham
+  customer: bruce
+  started_at: 2022-09-04 16:06:46
+  address: Manoir de Bruce Wayne
+  zipcode: 44-5566
+  city: Gotham
+  total_panels: 35
+  type_panel: 1
+  ref_panel: 763456
