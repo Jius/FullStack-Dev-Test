@@ -53,27 +53,3 @@ jobs:
       - name: Run tests
         run: bin/rake
         working-directory: server
-
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Install Ruby and gems
-        uses: ruby/setup-ruby@0a29871fe2b0200a17a4497bae54fe5df0d973aa # v1.115.3
-        with:
-          bundler-cache: true
-          ruby-version: '2.7.0'
-      - name: Bundle install
-        run: bin/bundle install
-        working-directory: server
-      # Add or replace any other lints here
-      - name: Security audit dependencies
-        run: bin/bundler-audit --update
-        working-directory: server
-      - name: Security audit application code
-        run: bin/brakeman -q -w2
-        working-directory: server
-      - name: Lint Ruby files
-        run: bin/rubocop --parallel
-        working-directory: server
