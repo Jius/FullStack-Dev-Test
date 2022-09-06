@@ -6,7 +6,7 @@ Be sure to read all of the instructions carefully and follow the guidelines belo
 
 ## Goal
 
-Build a RoR API and a small Angular.js app that uses this API. The application displays a unique web page acting as a form to register DualSun’s installations made by third party installers.
+Build a RoR API and a small Angular app that uses this API. The application displays a unique web page acting as a form to register DualSun’s installations made by third party installers.
 
 ## Context
 
@@ -42,7 +42,7 @@ A few technologies/libraries **must be used** to build the app:
 **Frontend:**
 
 - Language : Typescript
-- Framework : Angular.js (>= v10)
+- Framework : Angular (>= v10)
 
 **Backend:**
 
