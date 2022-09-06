@@ -22,11 +22,14 @@ jobs:
           POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
           POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
-          POSTGRES_HOST: {{ secrets.POSTGRES_HOST }}
-          POSTGRES_TEST_DB: {{ secrets.POSTGRES_TEST_DB }}
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://{{ secrets.USER }}:{{ secrets.POSTGRES_PASSWORD }}@localhost:5432/{{ secrets.POSTGRES_TEST_DB }}"
+      POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
+      POSTGRES_TEST_DB: ${{ secrets.POSTGRES_TEST_DB }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
