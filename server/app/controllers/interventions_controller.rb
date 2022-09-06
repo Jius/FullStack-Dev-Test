@@ -5,10 +5,8 @@ class InterventionsController < ApplicationController
 
   # GET /interventions
   def index
-    @q = Intervention.ransack(params[:q])
+    @q = Intervention.includes(:customer, :company).ransack(params[:q])
     @pagy, @interventions = pagy(@q.result)
-
-    render json: @interventions
   end
 
   # GET /interventions/1
