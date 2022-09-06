@@ -39,6 +39,9 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: '2.7.0'
+      - name: Bundle install
+        run: bin/bundle install
+        working-directory: server
       # Add or replace database setup steps here
       - name: Set up database schema
         run: bin/rails db:schema:load
