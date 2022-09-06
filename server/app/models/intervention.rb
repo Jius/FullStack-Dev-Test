@@ -8,6 +8,8 @@ class Intervention < ApplicationRecord
 
   before_create :set_type_panel_default
 
+  accepts_nested_attributes_for :customer, :company
+
   private
   def set_type_panel_default
     self.type_panel ||= :photovoltaic

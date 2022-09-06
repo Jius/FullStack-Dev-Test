@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class InterventionsController < ApplicationController
-  before_action :set_intervention, only: [:show, :update, :destroy]
+  before_action :set_intervention, only: %i[show update destroy]
 
   # GET /interventions
   def index
@@ -39,13 +41,33 @@ class InterventionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_intervention
-      @intervention = Intervention.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def intervention_params
-      params.require(:intervention).permit(:customer_id, :company_id, :started_at, :address, :zipcode, :city, :total_panels, :type_panel, :ref_panel)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_intervention
+    @intervention = Intervention.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def intervention_params
+    params.require(:intervention).permit(
+      :started_at,
+      :address,
+      :zipcode,
+      :city,
+      :total_panels,
+      :type_panel,
+      :ref_panel,
+      customer_attributes: %i[
+        id
+        name
+        email
+        phone
+      ],
+      company_attributes: %i[
+        id
+        name
+        siren
+      ]
+    )
+  end
 end
