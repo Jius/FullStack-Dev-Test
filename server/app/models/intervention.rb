@@ -12,6 +12,10 @@ class Intervention < ApplicationRecord
   before_validation :set_type_panel_default
   accepts_nested_attributes_for :customer, :company
 
+  ransacker :type_panel do |parent|
+    parent.table[:type_panel]
+  end
+
   private
   def set_type_panel_default
     self.type_panel ||= :photovoltaic
